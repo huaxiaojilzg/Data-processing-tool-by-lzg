@@ -34,3 +34,12 @@ peopleTest
   其中,CT-PET为一一对应图
   
   5 运行image_merge.py 对PC-PET进行合成并列的图像(可选),根据自己的训练模型选择数据是否运行
+  
+  data_random_deal.py 对数据进行信息增强,包括锐化,模糊,噪声等,暂未整合到peopleTest整体目录架构运行
+  
+  remove_person_down_dir.py 删除不需要的目录下的每个病人的del_dir = [
+    'CT_removal',
+    'CT_enhancement_(-45~50)_interval=3',
+    'PET_enhancement_(-45~50)_interval=3'
+
+]
