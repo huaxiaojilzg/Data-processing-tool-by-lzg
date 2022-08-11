@@ -8,7 +8,7 @@ folder
 import os
 import shutil
 
-ROOT_DIR = "people1"
+ROOT_DIR = "peopleTest"
 peolpe_dir_del_list_path = []
 
 del_dir = [

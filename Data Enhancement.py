@@ -1,7 +1,10 @@
 import os
 import cv2
 
-ROOT_DIR = 'people2'
+ROOT_DIR = 'peopleTest'
+a, b, c = -45, 50, 3
+
+
 # 旋转
 def rotate(pic, i):
     rows, cols = pic.shape[:2]
@@ -26,7 +29,7 @@ def main():
         ROOT_NAME = ROOT.split('-')[-1]
 
         # a,b,c = -90,100,10
-        a, b, c = -45, 50, 3
+
 
         new_ct_path = os.path.join(os.path.join(ROOTDIR, ROOT), 'CT_enhancement_({}~{})_interval={}'.format(a, b, c))
         new_pet_path = os.path.join(os.path.join(ROOTDIR, ROOT), 'PET_enhancement_({}~{})_interval={}'.format(a, b, c))

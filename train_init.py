@@ -7,7 +7,7 @@ folder
 '''
 import os
 
-ROOT_DIR = "people2"
+ROOT_DIR = "peopleTest"
 TRAIN_DIR = 'train_init_2'
 
 

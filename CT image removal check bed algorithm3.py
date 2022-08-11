@@ -6,7 +6,7 @@ import sys
 
 # y=96
 # x=152
-ROOT_DIR = 'people2'
+ROOT_DIR = 'peopleTest'
 
 def dfs(x, y, img_numpy, list_xy):
     max_x, max_y, _ = img_numpy.shape

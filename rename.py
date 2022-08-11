@@ -1,6 +1,6 @@
 import os
 
-dir_name = 'people2'
+dir_name = 'peopleTest'
 
 for ROOT in os.listdir(dir_name):
 

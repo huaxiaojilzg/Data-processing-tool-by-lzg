@@ -2,7 +2,7 @@ import os
 import numpy as np
 import cv2
 
-ROOT_DIR = 'people2'
+ROOT_DIR = 'peopleTest'
 OBJ_DIR = 'train_init_2'
 
 new_path = os.path.join(ROOT_DIR, OBJ_DIR + '_merge')
