@@ -3,7 +3,7 @@ import numpy as np
 import cv2
 
 ROOT_DIR = 'peopleTest'
-OBJ_DIR = 'train_init_2'
+OBJ_DIR = 'train_init_Test'
 
 new_path = os.path.join(ROOT_DIR, OBJ_DIR + '_merge')
 imA = os.path.join(ROOT_DIR, OBJ_DIR, 'CT')  # ct

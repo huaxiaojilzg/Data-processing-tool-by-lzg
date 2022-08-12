@@ -3,26 +3,26 @@ import argparse
 import cv2
 import sys
 
-
 # y=96
 # x=152
 ROOT_DIR = 'peopleTest'
 
+
 def dfs(x, y, img_numpy, list_xy):
     max_x, max_y, _ = img_numpy.shape
     if img_numpy[x][y][0] < 10 or img_numpy[x][y][1] < 10 or img_numpy[x][y][
-        2] < 10 or x < 5 or y < 5 or x >= max_x-5 or y >= max_y-5:
+        2] < 10 or x < 5 or y < 5 or x >= max_x - 5 or y >= max_y - 5:
         return
-    t=5
+    t = 5
     list_xy.append([x, y])
-    list_xy.append([x+t, y])
-    list_xy.append([x, y+t])
-    list_xy.append([x-t, y])
-    list_xy.append([x, y-t])
-    list_xy.append([x+t, y+t])
-    list_xy.append([x+t, y-t])
-    list_xy.append([x-t, y+t])
-    list_xy.append([x-t, y-t])
+    list_xy.append([x + t, y])
+    list_xy.append([x, y + t])
+    list_xy.append([x - t, y])
+    list_xy.append([x, y - t])
+    list_xy.append([x + t, y + t])
+    list_xy.append([x + t, y - t])
+    list_xy.append([x - t, y + t])
+    list_xy.append([x - t, y - t])
     img_numpy[x][y][0] = 0
     img_numpy[x][y][1] = 0
     img_numpy[x][y][2] = 0
@@ -96,7 +96,7 @@ def main():
         dfs(yy3, xx3, ct_numpy_tar3, removal_ct_xy_list)
         # print(removal_ct_xy_list)
 
-        i=0
+        i = 0
         for people_ct_img in people_ct_img_list:
             ct_numpy = cv2.imread(os.path.join(PPC_path, people_ct_img))
             new_ct_name = people_ct_img.split('.')[0]
@@ -106,8 +106,11 @@ def main():
                 yy = int(ls[1])
 
                 ct_numpy[xx][yy][0], ct_numpy[xx][yy][1], ct_numpy[xx][yy][2] = 0, 0, 0
-            cv2.imwrite(os.path.join(os.path.join(mainPath, people_ct_dir.split('\\')[1], 'CT_removal')) + '/' + new_ct_name + '.png', ct_numpy)
-            i+=1
+            cv2.imwrite(os.path.join(
+                os.path.join(mainPath, people_ct_dir.split('\\')[1], 'CT_removal')) + '/' + new_ct_name + '.png',
+                        ct_numpy)
+            i += 1
+
 
 if __name__ == '__main__':
     main()

@@ -1,7 +1,6 @@
 import os
 import cv2
 import random
-import string
 
 
 # 翻转
@@ -41,11 +40,11 @@ if __name__ == "__main__":
         # 对图片进行翻转旋转
         # random_deal_num = random.randint(-1, 1)
         random_deal_num = 1
-        random_rot_num = random.randint(-15,15)
+        random_rot_num = random.randint(-15, 15)
 
         ct_name = ct.split('.')[0]
         img_ct = cv2.imread(os.path.join(ct_path, ct))
-        img_ct_rot = rotate(img_ct,random_rot_num)
+        img_ct_rot = rotate(img_ct, random_rot_num)
         cv2.imwrite(os.path.join(save_ct_path, ct_name + "_rot_" + str(random_rot_num) + '.png'), img_ct_rot)
         img_ct_silp = filp(img_ct, random_deal_num)
         cv2.imwrite(os.path.join(save_ct_path, ct_name + "_filp_and_rot_" + str(random_deal_num) + '.png'), img_ct_silp)
@@ -56,7 +55,8 @@ if __name__ == "__main__":
         img_pet_rot = rotate(img_pet, random_rot_num)
         cv2.imwrite(os.path.join(save_pet_path, pet_name + "_rot_" + str(random_rot_num) + '.png'), img_pet_rot)
         img_pet_silp = filp(img_pet, random_deal_num)
-        cv2.imwrite(os.path.join(save_pet_path, pet_name + "_filp_and_rot_" + str(random_deal_num) + '.png'), img_pet_silp)
+        cv2.imwrite(os.path.join(save_pet_path, pet_name + "_filp_and_rot_" + str(random_deal_num) + '.png'),
+                    img_pet_silp)
         print(pet_name, "pet旋转完成")
 
         # print(i, ct, pet)
